@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2024 at 04:48 PM
+-- Generation Time: Oct 20, 2024 at 11:20 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -54,9 +54,7 @@ CREATE TABLE `data_aset` (
   `foto_npwp` varchar(255) NOT NULL,
   `foto_ktp` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,19 +62,16 @@ CREATE TABLE `data_aset` (
 -- Dumping data for table `data_aset`
 --
 
-INSERT INTO `data_aset` (`no`, `no_kontrak`, `objek_kerjasama`, `provinsi`, `kabupaten`, `kecamatan`, `jalan`, `skema_kerjasama`, `mitra`, `bidang_usaha`, `luas_objek`, `nilai_kontrak`, `tgl_mulai`, `tgl_berakhir`, `no_nik`, `no_kk`, `no_npwp`, `tgl_bayar`, `berkas_shp`, `berkas_pks`, `file_kmz`, `latitude`, `longitude`, `foto_npwp`, `foto_ktp`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'LA-PESWA/230414.003', 'Gudang di Wedi, Klaten', '13', '197', '521', 'Gudang Wedi Klaten', 'Sewa', 'CV Amtenars Berkat Bahagia', 'Industri Lainnya', '2580', '102450000', '2024-09-17', '2025-04-14', '3578144105001111', '3578144105001111', '3578144105001111', '2024-09-17', 'http://localhost/aset_n1r4_fix/uploads/files/1_pks amternas 2023-2025.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/1_pks amternas 2023-2025.pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/download.jpeg', 'http://localhost/aset_n1r4_fix/uploads/files/KTP_Andriyana Kurnianisa M.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(2, 'XX-KONTR/21.164', 'Tanah dan Bangunan Berupa Ex. Rumdin PG. Watoetoelis (SHGB No.18)', '15', '242', '555', 'Watoetoelis Sidoarjo', 'Sewa', 'Andi Yudhi Wibowo', 'Usaha Kuliner dan Workshop', '442', '3500000', '2021-06-14', '2023-06-14', '123123', '123123', '21312', '2021-06-22', 'http://localhost/aset_n1r4_fix/uploads/files/2_PKS Andi Yudhi 2021-2023.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/2_PKS Andi Yudhi 2021-2023.pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(3, 'XX-KONTR/23.125', 'Aset dan Bangunan Eks. Rumah Dinas PG. Toelangan', '15', '242', '555', 'Rumah Dinas No. 22B PG. Toelangan di Desa Tulangan, Kec, Tulangan, Kab. Sidoarjo', 'Sewa', 'Arif Budiyanto', 'Warung Makan', '507', '66330000', '2023-08-01', '2026-07-31', '1234567', '1234567', '1234567', '2024-10-03', 'http://localhost/aset_n1r4_fix/uploads/files/PKS Arif Budiyanto 2.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/PKS Arif Budiyanto 2.pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(4, 'XX-KONTR/21.356', 'Lahan Aset Tanah di Pecangaan - Jepara', '13', '207', '555', 'Desa Pulodarat, Kecamatan Pecangaan, Kabupaten Jepara', 'Sewa', 'CV Arif Putra (Teguh Bachtiar)', 'Warung Makan', '6304', '90000000', '2021-11-17', '2025-11-17', '1234567', '1234567', '1234567', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/arif putra.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/arif putra.pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(5, 'XX-KONTR/19.156', 'Tanah di Desa Gadungan Kec. Wedi, Kab. Klaten ', '13', '197', '555', 'Desa Gadungan, Kecamatan Wedi, Kabupaten Klaten', 'Sewa', 'Asfandi Afrianto', 'Owner', '3220', '25000000', '2019-05-17', '2019-06-04', '1234567', '1234567', '12345', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/asfandi afrianto.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/asfandi afrianto.pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(6, 'XX-KONTR/21.360', 'Aset Tanah di Desa Jimbaran Kulon, Kec. Wonoayu, Kab, Sidoarjo', '15', '242', '555', 'Desa Jimbaran Kulon Kec. Wonoayu Kab. Sidoarjo (Sertfikat HGB No.01)', 'Sewa', 'Asirin', 'Toko Kelontong', '30', '3500000', '2021-10-01', '2024-09-30', '123455', '123456', '123455', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/pks Asirin (desa jimbaran kulon-wonoayu).pdf', 'http://localhost/aset_n1r4_fix/uploads/files/pks Asirin (desa jimbaran kulon-wonoayu).pdf', 'buffetthawaiitour.kmz', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, 3, '2024-10-10 13:42:33', NULL, NULL),
-(9, '13', 'Abs', '14', '1403', '140310', 'rupat', 'jual', 'jual', 'jual', 'jual', 'jual', '2024-10-21', '2024-10-30', '12313', '12312', '123321', '2024-10-21', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', 'buffetthawaiitour.kmz', NULL, NULL, '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', NULL, 3, '2024-10-20 05:37:59', NULL, NULL),
-(10, 'asdasd1', 'Abs', '14', '1403', '140310', 'rupat', 'jual', 'jual', 'jual', 'jual', 'jual', '2024-10-21', '2024-12-19', '12313', '12312', '123321', '2024-10-21', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', '', '-7.250445', '112.768845', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', NULL, 3, '2024-10-20 05:38:23', 4, NULL),
-(11, 'sadaaa25125231', 'asd', '31', '3172', '317202', 'asd', 'asdad', 'asd', 'asd', 'asd', 'asd', '2024-10-22', '2025-02-21', 'asdasd', 'asdasd', 'asdasd', '2024-10-21', '../uploads/40796-Article Text-114658-1-10-20201231-1.pdf', '../uploads/16870-Article Text-47588-1-10-20220203.pdf', '', '-7.250445', '112.768845', '../uploads/La-Roche-Posay-Logo.png', '../uploads/XkBuDsR9QTeO9d4hrnw3_LP56860-lrp-retail-brand-white-logo.png', '2024-10-20 09:30:09', 3, '2024-10-20 07:30:09', 3, NULL),
-(12, 'aset 1', 'asdas', ' 31', '3172', '317201', 'koja', 'KSU', 'asdas', 'adsas', '1321', '2131', '2024-11-07', '2024-12-12', '213123123123', '12313131', '1313123', '2024-11-15', '../uploads/16870-Article Text-47588-1-10-20220203.pdf', '../uploads/16870-Article Text-47588-1-10-20220203.pdf', '', '-7.258320839055749', '112.71641430325087', '../uploads/DALL·E 2024-11-06 20.06.23 - A young professional working on multiple tech projects, surrounded by a laptop, code snippets, books on software development, and some project-related.webp', '../uploads/DALL·E 2024-11-06 20.06.23 - A young professional working on multiple tech projects, surrounded by a laptop, code snippets, books on software development, and some project-related.webp', '2024-11-06 21:58:26', 3, '2024-11-06 14:58:26', NULL, NULL),
-(13, 'aset  2', 'asdaasd', ' 12', '1205', '120504', 'asdaasd', 'KSU', 'sddas', 'asdaasd', 'asdaasd', 'asdaasd', '2024-11-21', '2024-12-19', '123123', '13123', '132131', '2024-11-21', '../uploads/16870-Article Text-47588-1-10-20220203.pdf', '../uploads/IJAEB+(1.3)+1328-1338.pdf', '', '-7.23926256205437', '112.70043794128418', '../uploads/GYfrkKkb0AAEL5m.jpeg', '../uploads/cropped-Gedung-IKPRI-BERANDA-1.jpg', '2024-11-06 22:00:48', 3, '2024-11-06 15:00:48', 3, NULL),
-(14, 'aset 3', '21412412', ' 33', '3309', '330901', '21412412', 'Jual', '21412412', '21412412', '21412412', '21412412', '2024-11-14', '2025-01-09', '21412412', '21412412', '21412412', '2024-11-19', '../uploads/500-1615-1-PB.pdf', '../uploads/_295-305+Implementasi+Algoritma+Naive+bayes+dalam+Klasifikasi+Status+Kesejahteraan+Masyarakat+Desa+Gunungsari+.pdf', '', '-7.2576538325691695', '112.71983567687988', '../uploads/143285.jpg', '../uploads/5173528.jpg', '2024-11-06 22:02:42', 3, '2024-11-06 15:02:42', 3, NULL);
+INSERT INTO `data_aset` (`no`, `no_kontrak`, `objek_kerjasama`, `provinsi`, `kabupaten`, `kecamatan`, `jalan`, `skema_kerjasama`, `mitra`, `bidang_usaha`, `luas_objek`, `nilai_kontrak`, `tgl_mulai`, `tgl_berakhir`, `no_nik`, `no_kk`, `no_npwp`, `tgl_bayar`, `berkas_shp`, `berkas_pks`, `file_kmz`, `latitude`, `longitude`, `foto_npwp`, `foto_ktp`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'LA-PESWA/230414.003', 'Gudang di Wedi, Klaten', 'JAWA TENGAH', 'KAB. KLATEN', 'Krembangan', 'Gudang Wedi Klaten', 'Sewa', 'CV Amtenars Berkat Bahagia', 'Industri Lainnya', '2580', '102450000', '2024-09-17', '2025-04-14', '3578144105001111', '3578144105001111', '3578144105001111', '2024-09-17', 'http://localhost/aset_n1r4_fix/uploads/files/1_pks amternas 2023-2025.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/1_pks amternas 2023-2025.pdf', 'Upload KML', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/download.jpeg', 'http://localhost/aset_n1r4_fix/uploads/files/KTP_Andriyana Kurnianisa M.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(2, 'XX-KONTR/21.164', 'Tanah dan Bangunan Berupa Ex. Rumdin PG. Watoetoelis (SHGB No.18)', 'JAWA TIMUR', 'KAB. SIDOARJO', 'Bakongan', 'Watoetoelis Sidoarjo', 'Sewa', 'Andi Yudhi Wibowo', 'Usaha Kuliner dan Workshop', '442', '3500000', '2021-06-14', '2023-06-14', '123123', '123123', '21312', '2021-06-22', 'http://localhost/aset_n1r4_fix/uploads/files/2_PKS Andi Yudhi 2021-2023.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/2_PKS Andi Yudhi 2021-2023.pdf', '', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(3, 'XX-KONTR/23.125', 'Aset dan Bangunan Eks. Rumah Dinas PG. Toelangan', 'JAWA TIMUR', 'KAB. SIDOARJO', 'Tulangan', 'Rumah Dinas No. 22B PG. Toelangan di Desa Tulangan, Kec, Tulangan, Kab. Sidoarjo', 'Sewa', 'Arif Budiyanto', 'Warung Makan', '507', '66330000', '2023-08-01', '2026-07-31', '1234567', '1234567', '1234567', '2024-10-03', 'http://localhost/aset_n1r4_fix/uploads/files/PKS Arif Budiyanto 2.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/PKS Arif Budiyanto 2.pdf', '', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(4, 'XX-KONTR/21.356', 'Lahan Aset Tanah di Pecangaan - Jepara', 'JAWA TENGAH', 'KAB. JEPARA', 'Pecangaan', 'Desa Pulodarat, Kecamatan Pecangaan, Kabupaten Jepara', 'Sewa', 'CV Arif Putra (Teguh Bachtiar)', 'Warung Makan', '6304', '90000000', '2021-11-17', '2025-11-17', '1234567', '1234567', '1234567', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/arif putra.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/arif putra.pdf', '', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(5, 'XX-KONTR/19.156', 'Tanah di Desa Gadungan Kec. Wedi, Kab. Klaten ', 'JAWA TENGAH', 'KAB. KLATEN', 'Wedi', 'Desa Gadungan, Kecamatan Wedi, Kabupaten Klaten', 'Sewa', 'Asfandi Afrianto', 'Owner', '3220', '25000000', '2019-05-17', '2019-06-04', '1234567', '1234567', '12345', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/asfandi afrianto.pdf', 'http://localhost/aset_n1r4_fix/uploads/files/asfandi afrianto.pdf', '', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(6, 'XX-KONTR/21.360', 'Aset Tanah di Desa Jimbaran Kulon, Kec. Wonoayu, Kab, Sidoarjo', 'JAWA TIMUR', 'KAB. SIDOARJO', 'Wonoayu', 'Desa Jimbaran Kulon Kec. Wonoayu Kab. Sidoarjo (Sertfikat HGB No.01)', 'Sewa', 'Asirin', 'Toko Kelontong', '30', '3500000', '2021-10-01', '2024-09-30', '123455', '123456', '123455', '2024-10-04', 'http://localhost/aset_n1r4_fix/uploads/files/pks Asirin (desa jimbaran kulon-wonoayu).pdf', 'http://localhost/aset_n1r4_fix/uploads/files/pks Asirin (desa jimbaran kulon-wonoayu).pdf', '', NULL, NULL, 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', 'http://localhost/aset_n1r4_fix/uploads/files/ASET N1r4.jpg', NULL, '2024-10-10 13:42:33', NULL),
+(9, '13', 'Abs', '14', '1403', '140310', 'rupat', 'jual', 'jual', 'jual', 'jual', 'jual', '2024-10-21', '2024-10-30', '12313', '12312', '123321', '2024-10-21', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', 'buffetthawaiitour.kmz', NULL, NULL, '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', NULL, '2024-10-20 05:37:59', NULL),
+(10, '13sda285678568', 'Abs', '14', '1403', '140310', 'rupat', 'jual', 'jual', 'jual', 'jual', 'jual', '2024-10-21', '2024-10-30', '12313', '12312', '123321', '2024-10-21', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', '../uploads/sertifikat_course_256_2689730_171024131105.pdf', 'buffetthawaiitour.kmz', '-7.265623149160561', '112.73339692565918', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', '../uploads/WhatsApp Image 2024-10-17 at 01.57.31_e8800521.jpg', NULL, '2024-10-20 05:38:23', NULL),
+(11, 'sad', 'asd', '31', '3172', '317202', 'asd', 'asdad', 'asd', 'asd', 'asd', 'asd', '2024-10-22', '2024-10-31', 'asdasd', 'asdasd', 'asdasd', '2024-10-21', '../uploads/40796-Article Text-114658-1-10-20201231-1.pdf', '../uploads/16870-Article Text-47588-1-10-20220203.pdf', '', '-7.25519892298281', '112.7336311340332', '../uploads/La-Roche-Posay-Logo.png', '../uploads/XkBuDsR9QTeO9d4hrnw3_LP56860-lrp-retail-brand-white-logo.png', '2024-10-20 09:30:09', '2024-10-20 07:30:09', '2024-10-20 16:05:36');
 
 -- --------------------------------------------------------
 
@@ -7912,20 +7907,6 @@ INSERT INTO `kota_kabupaten` (`id`, `provinsi_id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `expires_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `provinsi`
 --
 
@@ -7990,19 +7971,16 @@ CREATE TABLE `user` (
   `login_session_key` varchar(255) DEFAULT NULL,
   `email_status` varchar(255) DEFAULT NULL,
   `password_expire_date` datetime DEFAULT '2024-12-23 00:00:00',
-  `password_reset_key` varchar(255) DEFAULT NULL,
-  `reset_token` varchar(255) DEFAULT NULL,
-  `token_expiry` datetime DEFAULT NULL
+  `password_reset_key` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `login_session_key`, `email_status`, `password_expire_date`, `password_reset_key`, `reset_token`, `token_expiry`) VALUES
-(1, 'n1r4@gmail.com', '$2y$10$A1vsmFilxShnCnDHeQCOuulDlKo5I4x3icZU1Osj3UvK0XhdY1RdW', '3c834bc3bb28f030c642c1c4bb44eeae', NULL, '2024-12-23 00:00:00', NULL, NULL, NULL),
-(3, 'admin@gmail.com', '$2y$10$6mR162dVmVR5WRvBRDUk4Orl9dOQS3HEgI.gqQJ1u59xxAnTzI8EW', NULL, NULL, '2024-12-23 00:00:00', NULL, '8d373fc536e9db72da76d1369bf92ca241e2b9091d1e2ca274a43dc7ae8d1b050884a08a46b31c669eb9a364793d2e3ce265', '2024-11-06 17:43:27'),
-(4, 'test@gmail.com', '$2y$10$6X2BuXo6Ja7vmXWp.775YOcSDPO4Qr5pXAwiWpf.852He55aAzkfO', NULL, NULL, '2024-12-23 00:00:00', NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `login_session_key`, `email_status`, `password_expire_date`, `password_reset_key`) VALUES
+(1, 'n1r4@gmail.com', '$2y$10$A1vsmFilxShnCnDHeQCOuulDlKo5I4x3icZU1Osj3UvK0XhdY1RdW', '3c834bc3bb28f030c642c1c4bb44eeae', NULL, '2024-12-23 00:00:00', NULL),
+(3, 'admin@gmail.com', '$2y$10$6mR162dVmVR5WRvBRDUk4Orl9dOQS3HEgI.gqQJ1u59xxAnTzI8EW', NULL, NULL, '2024-12-23 00:00:00', NULL);
 
 --
 -- Indexes for dumped tables
@@ -8027,12 +8005,6 @@ ALTER TABLE `kota_kabupaten`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `provinsi`
 --
 ALTER TABLE `provinsi`
@@ -8052,7 +8024,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_aset`
 --
 ALTER TABLE `data_aset`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `kecamatan`
@@ -8067,12 +8039,6 @@ ALTER TABLE `kota_kabupaten`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9509;
 
 --
--- AUTO_INCREMENT for table `password_resets`
---
-ALTER TABLE `password_resets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `provinsi`
 --
 ALTER TABLE `provinsi`
@@ -8082,7 +8048,7 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
