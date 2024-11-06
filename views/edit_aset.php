@@ -132,19 +132,19 @@ if (isset($_GET['id'])) {
                                     <form action="edit_aset.php?id=<?= $id ?>" method="POST"
                                         enctype="multipart/form-data">
                                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['id'] ?>">
-                                        <div class="form-group">
-                                            <label for="no_kontrak">No Kontrak</label>
+                                        <div class="form-group mb-2">
+                                            <label for="no_kontrak">Kode Aset</label>
                                             <input type="text" class="form-control" id="no_kontrak" name="no_kontrak"
                                                 value="<?= $aset['no_kontrak'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="objek_kerjasama">Objek Kerjasama</label>
                                             <input type="text" class="form-control" id="objek_kerjasama"
                                                 name="objek_kerjasama" value="<?= $aset['objek_kerjasama'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="provinsi">Provinsi:</label>
                                             <select class="form-control" name="provinsi" id="provinsi" required>
                                                 <option value="">Pilih Provinsi</option>
@@ -157,7 +157,7 @@ if (isset($_GET['id'])) {
                                         </div>
 
                                         <!-- Kabupaten Dropdown -->
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="kabupaten">Kota/Kabupaten:</label>
                                             <select class="form-control" name="kabupaten" id="kabupaten" required>
                                                 <option value="">Pilih Kota/Kabupaten</option>
@@ -171,7 +171,7 @@ if (isset($_GET['id'])) {
                                         </div>
 
                                         <!-- Kecamatan Dropdown -->
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="kecamatan">Kecamatan:</label>
                                             <select class="form-control" name="kecamatan" id="kecamatan" required>
                                                 <option value="">Pilih Kecamatan</option>
@@ -184,79 +184,90 @@ if (isset($_GET['id'])) {
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="jalan">Jalan</label>
+                                        <div class="form-group mb-2">
+                                            <label for="jalan">Alamat Lengkap</label>
                                             <input type="text" class="form-control" id="jalan" name="jalan"
                                                 value="<?= $aset['jalan'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="skema_kerjasama">Skema Kerjasama</label>
-                                            <input type="text" class="form-control" id="skema_kerjasama"
-                                                name="skema_kerjasama" value="<?= $aset['skema_kerjasama'] ?>" required>
+                                            <select class="form-control" name="skema_kerjasama" id="skema_kerjasama"
+                                                required>
+                                                <option value="" disabled>Pilih opsi</option>
+                                                <option value="Jual"
+                                                    <?= $aset['skema_kerjasama'] == 'Jual' ? 'selected' : '' ?>>Jual
+                                                </option>
+                                                <option value="KSU"
+                                                    <?= $aset['skema_kerjasama'] == 'KSU' ? 'selected' : '' ?>>KSU
+                                                </option>
+                                                <option value="Sewa"
+                                                    <?= $aset['skema_kerjasama'] == 'Sewa' ? 'selected' : '' ?>>Sewa
+                                                </option>
+                                            </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="mitra">Mitra</label>
+                                        <div class="form-group mb-2">
+                                            <label for="mitra">Nama Mitra</label>
                                             <input type="text" class="form-control" id="mitra" name="mitra"
                                                 value="<?= $aset['mitra'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="bidang_usaha">Bidang Usaha</label>
+                                        <div class="form-group mb-2">
+                                            <label for="bidang_usaha">Bidang Usaha Mitra</label>
                                             <input type="text" class="form-control" id="bidang_usaha"
                                                 name="bidang_usaha" value="<?= $aset['bidang_usaha'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="luas_objek">Luas Objek</label>
+                                        <div class="form-group mb-2">
+                                            <label for="luas_objek">Luas Objek(Satuan m&sup2;)</label>
                                             <input type="text" class="form-control" id="luas_objek" name="luas_objek"
                                                 value="<?= $aset['luas_objek'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="nilai_kontrak">Nilai Kontrak</label>
                                             <input type="text" class="form-control" id="nilai_kontrak"
                                                 name="nilai_kontrak" value="<?= $aset['nilai_kontrak'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="tgl_mulai">Tanggal Mulai</label>
                                             <input type="date" class="form-control" id="tgl_mulai" name="tgl_mulai"
                                                 value="<?= $aset['tgl_mulai'] ?>">
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="tgl_berakhir">Tanggal Berakhir</label>
                                             <input type="date" class="form-control" id="tgl_berakhir"
                                                 name="tgl_berakhir" value="<?= $aset['tgl_berakhir'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="no_nik">No NIK</label>
                                             <input type="text" class="form-control" id="no_nik" name="no_nik"
                                                 value="<?= $aset['no_nik'] ?>">
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="no_kk">No KK</label>
                                             <input type="text" class="form-control" id="no_kk" name="no_kk"
                                                 value="<?= $aset['no_kk'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="no_npwp">No NPWP</label>
                                             <input type="text" class="form-control" id="no_npwp" name="no_npwp"
                                                 value="<?= $aset['no_npwp'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="tgl_bayar">Tanggal Bayar</label>
                                             <input type="date" class="form-control" id="tgl_bayar" name="tgl_bayar"
                                                 value="<?= $aset['tgl_bayar'] ?>" required>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="file_kmz_option">Pilih Opsi:</label>
                                             <select class="form-control" id="file_kmz_option" name="file_kmz_option"
                                                 required onchange="toggleInput()">
@@ -271,7 +282,7 @@ if (isset($_GET['id'])) {
                                         </div>
 
                                         <!-- Form for Upload File -->
-                                        <div class="form-group" id="file_kmz_upload"
+                                        <div class="form-group mb-2" id="file_kmz_upload"
                                             style="display: <?= (empty($aset['latitude']) && empty($aset['longitude'])) ? 'block' : 'none' ?>;">
                                             <label for="file_kmz">File KMZ</label>
                                             <input type="file" class="form-control" id="file_kmz" name="file_kmz">
@@ -284,7 +295,7 @@ if (isset($_GET['id'])) {
                                         </div>
 
                                         <!-- Form for Coordinate -->
-                                        <div class="form-group" id="coordinate_input"
+                                        <div class="form-group mb-2" id="coordinate_input"
                                             style="display: <?= (!empty($aset['latitude']) && !empty($aset['longitude'])) ? 'block' : 'none' ?>;">
                                             <label for="latitude">Latitude</label>
                                             <input type="text" class="form-control" id="latitude" name="latitude"
@@ -298,14 +309,14 @@ if (isset($_GET['id'])) {
                                                 style="width: 100%; height: 400px; margin-top: 10px;"></div>
                                         </div>
 
-                                        <!-- <div class="form-group">
+                                        <!-- <div class="form-group mb-2">
                                             <label for="alamat">Alamat</label>
                                             <input type="text" class="form-control" id="alamat" name="alamat"
                                                 value="<?= $aset['alamat'] ?>" required>
                                         </div> -->
 
-                                        <div class="form-group">
-                                            <label for="berkas_shp">Berkas SHP</label>
+                                        <div class="form-group mb-2">
+                                            <label for="berkas_shp">Upload Invoice (PDF)</label>
                                             <input type="file" class="form-control" id="berkas_shp" name="berkas_shp">
 
                                             <?php if (!empty($aset['berkas_shp'])): ?>
@@ -316,8 +327,8 @@ if (isset($_GET['id'])) {
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label for="berkas_pks">Berkas PKS</label>
+                                        <div class="form-group mb-2">
+                                            <label for="berkas_pks">Upload Berkas PKS (PDF)</label>
                                             <input type="file" class="form-control" id="berkas_pks" name="berkas_pks">
 
                                             <?php if (!empty($aset['berkas_pks'])): ?>
@@ -328,7 +339,7 @@ if (isset($_GET['id'])) {
                                         </div>
 
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="foto_npwp">Foto NPWP</label>
                                             <input type="file" class="form-control" id="foto_npwp" name="foto_npwp">
 
@@ -339,7 +350,7 @@ if (isset($_GET['id'])) {
                                             <?php endif; ?>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label for="foto_ktp">Foto KTP</label>
                                             <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
 

@@ -106,7 +106,7 @@ include '../config/database.php'; // Include your database connection
                                             ?>
                                     <table class="table table-bordered">
                                         <tr>
-                                            <th>No Kontrak</th>
+                                            <th>Kode Aset</th>
                                             <td><?= htmlspecialchars($aset['no_kontrak'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
@@ -126,7 +126,7 @@ include '../config/database.php'; // Include your database connection
                                             <td><?= htmlspecialchars($aset['kecamatan_nama'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
-                                            <th>Jalan</th>
+                                            <th>Alamat Lengkap</th>
                                             <td><?= htmlspecialchars($aset['jalan'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
@@ -134,15 +134,15 @@ include '../config/database.php'; // Include your database connection
                                             <td><?= htmlspecialchars($aset['skema_kerjasama'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
-                                            <th>Mitra</th>
+                                            <th>Nama Mitra</th>
                                             <td><?= htmlspecialchars($aset['mitra'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
-                                            <th>Bidang Usaha</th>
+                                            <th>Bidang Usaha Mitra</th>
                                             <td><?= htmlspecialchars($aset['bidang_usaha'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
-                                            <th>Luas Objek</th>
+                                            <th>Luas Objek (Satuan m&sup2;)</th>
                                             <td><?= htmlspecialchars($aset['luas_objek'] ?? 'NULL') ?></td>
                                         </tr>
                                         <tr>
@@ -182,7 +182,7 @@ include '../config/database.php'; // Include your database connection
                                             <td><?= htmlspecialchars($aset['longitude'] ?? 'NULL') ?></td>
                                         </tr> -->
                                         <tr>
-                                            <th>Berkas SHP</th>
+                                            <th> Invoice (PDF)</th>
                                             <td>
                                                 <?php if (!empty($aset['berkas_shp'])): ?>
                                                 <embed src="<?= htmlspecialchars($aset['berkas_shp']) ?>"
@@ -193,7 +193,7 @@ include '../config/database.php'; // Include your database connection
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Berkas PKS</th>
+                                            <th> Berkas PKS (PDF)</th>
                                             <td>
                                                 <?php if (!empty($aset['berkas_pks'])): ?>
                                                 <embed src="<?= htmlspecialchars($aset['berkas_pks']) ?>"

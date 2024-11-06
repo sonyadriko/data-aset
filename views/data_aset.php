@@ -2,7 +2,86 @@
 include '../config/database.php';
 
 error_reporting(E_ALL);
-ini_set('display_errors', 1); ?>
+ini_set('display_errors', 1);
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+require '../vendor/autoload.php'; // jika menggunakan composer
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (isset($_GET['export'])) {
+    // Query untuk mengambil data dari tabel data_aset
+    $get_data = mysqli_query($conn, "
+        SELECT da.*, p.nama_provinsi AS provinsi_nama, k.nama AS kabupaten_nama, c.nama AS kecamatan_nama 
+        FROM data_aset da
+        JOIN provinsi p ON da.provinsi = p.id
+        JOIN kota_kabupaten k ON da.kabupaten = k.id
+        JOIN kecamatan c ON da.kecamatan = c.id
+        WHERE deleted_at IS NULL
+    ");
+
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Set header untuk Excel
+    $sheet->setCellValue('A1', 'Kode Aset')
+        ->setCellValue('B1', 'Objek Kerjasama')
+        ->setCellValue('C1', 'Provinsi')
+        ->setCellValue('D1', 'Kabupaten')
+        ->setCellValue('E1', 'Kecamatan')
+        ->setCellValue('F1', 'Alamat Lengkap')
+        ->setCellValue('G1', 'Nama Mitra')
+        ->setCellValue('H1', 'Bidang Usaha Mitra')
+        ->setCellValue('I1', 'Luas Objek')
+        ->setCellValue('J1', 'Nilai Kontrak')
+        ->setCellValue('K1', 'Tanggal Mulai')
+        ->setCellValue('L1', 'Tanggal Berakhir')
+        ->setCellValue('M1', 'No NIK')
+        ->setCellValue('N1', 'No KK')
+        ->setCellValue('O1', 'No NPWP')
+        ->setCellValue('P1', 'Tanggal Bayar');
+
+    // Data mulai dari row 2
+    $row = 2;
+    while ($display = mysqli_fetch_array($get_data)) {
+        $sheet->setCellValue('A' . $row, $display['no_kontrak'])
+            ->setCellValue('B' . $row, $display['objek_kerjasama'])
+            ->setCellValue('C' . $row, $display['provinsi_nama'])
+            ->setCellValue('D' . $row, $display['kabupaten_nama'])
+            ->setCellValue('E' . $row, $display['kecamatan_nama'])
+            ->setCellValue('F' . $row, $display['jalan'])
+            ->setCellValue('G' . $row, $display['skema_kerjasama'])
+            ->setCellValue('H' . $row, $display['mitra'])
+            ->setCellValue('I' . $row, $display['bidang_usaha'])
+            ->setCellValue('J' . $row, $display['luas_objek'])
+            ->setCellValue('K' . $row, $display['nilai_kontrak'])
+            ->setCellValue('L' . $row, $display['tgl_mulai'])
+            ->setCellValue('M' . $row, $display['tgl_berakhir'])
+            ->setCellValue('N' . $row, $display['no_nik'])
+            ->setCellValue('O' . $row, $display['no_kk'])
+            ->setCellValue('P' . $row, $display['no_npwp'])
+            ->setCellValue('Q' . $row, $display['tgl_bayar']);
+        $row++;
+    }
+
+    // Write to Excel file
+    $writer = new Xlsx($spreadsheet);
+    $filename = 'Data_Aset_' . date('Y-m-d_H-i-s') . '.xlsx';
+
+    // Set headers untuk download
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="' . $filename . '"');
+    header('Cache-Control: max-age=0');
+
+    $writer->save('php://output');
+    exit;
+}
+?>
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +139,9 @@ ini_set('display_errors', 1); ?>
                             <a href="tambah_aset.php" class="btn btn-primary">
                                 Tambah Data Aset
                             </a>
+                            <a href="data_aset.php?export=true" class="btn btn-success" onclick="alertExport()">Ekspor
+                                ke Excel</a>
+
                         </div>
                     </div>
 
@@ -189,6 +271,10 @@ ini_set('display_errors', 1); ?>
             }
         });
     });
+
+    function alertExport() {
+        alert("Export berhasil! File Excel telah diunduh.");
+    }
     </script>
     <script>
     $(document).ready(function() {
