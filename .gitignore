@@ -1,2 +1,11 @@
 /vendor/
 /config/
+/node_modules/
+/*.log
+*.env
+*.bak
+*.swp
+.idea/
+/.vscode/
+/composer.lock
+/.phpunit.result.cache
